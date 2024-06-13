@@ -58,7 +58,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const createdUser = await User.findById(user._id).select("-password -refreshToken");
     if (!createdUser) {
         return res.status(201).json(
-            new ApiResponse(200, createdUser, "User registered successfully");
+            new ApiResponse(200, createdUser, "User registered successfully")
         )
     }
 
